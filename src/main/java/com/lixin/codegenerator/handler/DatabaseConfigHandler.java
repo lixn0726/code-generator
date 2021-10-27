@@ -19,7 +19,7 @@ import java.util.*;
  *
  * @author lixn
  */
-public class DatabaseConfigHandler extends IHandler{
+public class DatabaseConfigHandler extends IHandler<Map<String, Object>>{
     private static final DatabaseConfig config;
     private static Connection connection;
     private static ITypeConvert converter;

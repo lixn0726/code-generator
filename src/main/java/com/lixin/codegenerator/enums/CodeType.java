@@ -7,7 +7,14 @@ package com.lixin.codegenerator.enums;
  * @create 2021/8/20 10:16 上午
  **/
 public enum CodeType {
-    controller,service,serviceImpl,mapper,mapperXml,entity;
+    controller,
+    service,
+    serviceImpl,
+    mapper,
+    mapperXml,
+    entity,
+    entityExample // 兼容mybatis-plus
+    ;
 
     private String type;
 

@@ -2,6 +2,7 @@ package com.lixin.codegenerator.execute;
 
 import com.lixin.codegenerator.common.Constant;
 import com.lixin.codegenerator.handler.DatabaseConfigHandler;
+import com.lixin.codegenerator.handler.FileHandler;
 import com.lixin.codegenerator.handler.UniversalConfigHandler;
 import com.lixin.codegenerator.pojo.TableInfo;
 import com.lixin.codegenerator.util.YamlReader;
@@ -20,11 +21,13 @@ import java.util.Map;
 public class GeneratorManager {
     private static final UniversalConfigHandler universalConfigHandler;
     private static final DatabaseConfigHandler databaseConfigHandler;
+    private static final FileHandler fileHandler;
     private static List<TableInfo> infos = new ArrayList<>();
 
     static {
         databaseConfigHandler = new DatabaseConfigHandler();
         universalConfigHandler = new UniversalConfigHandler();
+        fileHandler = new FileHandler();
     }
 
     // ------ singleton
@@ -60,7 +63,12 @@ public class GeneratorManager {
         infos = databaseConfigHandler.getDataBaseInfos();
     }
 
+    @Deprecated
     public void show() {
         System.out.println(infos.toString());
+    }
+
+    public void generate() {
+        fileHandler.generateFile(infos);
     }
 }

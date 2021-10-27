@@ -10,6 +10,6 @@ import java.util.Map;
  *
  * @author lixn
  */
-public abstract class IHandler {
-    public abstract void initConfig(Map<String, Object> args);
+public abstract class IHandler<T> {
+    public abstract void initConfig(T t);
 }

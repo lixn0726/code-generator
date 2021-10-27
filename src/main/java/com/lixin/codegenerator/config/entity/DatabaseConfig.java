@@ -18,7 +18,7 @@ public class DatabaseConfig implements IConfig{
 
     // ------ inner builder
 
-    class Builder {
+    static final class Builder {
         private DatabaseType type;
         private String url;
         private String driverName;

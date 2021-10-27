@@ -9,13 +9,16 @@ package com.lixin.codegenerator.common;
 public interface Constant {
     String YAML_PATH = "/generator.yml";
     String CURRENT_DIR = System.getProperty("user.dir");
+    String JAVA_FILE_PATH = "/src/main/java/";
 
     // ------ args
 
     String JDBC = "com.mysql.cj.jdbc.Driver";
     String DATASOURCE_CONFIGURATION = "Datasource";
     String GLOBAL_CONFIGURATION = "Global";
-    String SETTLED_PATH = "/src/main/java/";
+    String OUTPUT_PATH = CURRENT_DIR + JAVA_FILE_PATH; // 固定文件输出路径
+    String TEMPLATE_PATH = "/template"; // 模版文件存放路径
+    String TEMPLATE_SUFFIX = "Template.ftl"; // 模版文件统一后缀
 
     // ------ elements
 

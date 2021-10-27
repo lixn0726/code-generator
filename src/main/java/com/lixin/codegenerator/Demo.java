@@ -1,7 +1,10 @@
 package com.lixin.codegenerator;
 
+import com.lixin.codegenerator.common.Constant;
 import com.lixin.codegenerator.execute.GeneratorManager;
+import org.apache.tomcat.util.bcel.Const;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,10 +19,10 @@ import java.util.Properties;
 public class Demo {
     public static void main(String[] args) throws Exception{
 
-        GeneratorManager manager = GeneratorManager.getInstance();
-        manager.init();
-        manager.loadDBMessages();
-        manager.show();
+//        GeneratorManager manager = GeneratorManager.getInstance();
+//        manager.init();
+//        manager.loadDBMessages();
+//        manager.show();
 
 //        String tableName = "t_user_info";
 //        System.out.println(tableName.length());
@@ -94,5 +97,9 @@ public class Demo {
 //        for (Map.Entry<String, Object> element : dbConf.entrySet()) {
 //            System.out.println("NO." + count++ + " : key = " + element.getKey() + " , value = " + element.getValue());
 //        }
+//        System.out.println(System.getProperty("user.dir"));
+//        String file = "/Users/mac/github-project/code-generator/src/main/java/com/lixin/codegenerator/test";
+//        File file1 = new File(file);
+
     }
 }
