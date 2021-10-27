@@ -2,10 +2,12 @@ package com.lixin.codegenerator.config;
 
 import com.lixin.codegenerator.config.convert.MySQLTypeConvertor;
 import com.lixin.codegenerator.config.convert.OracleTypeConvertor;
+import com.lixin.codegenerator.config.entity.IConfig;
 import com.lixin.codegenerator.enums.DatabaseType;
 import com.lixin.codegenerator.pojo.TableField;
 import com.lixin.codegenerator.pojo.TableInfo;
 import com.lixin.codegenerator.util.CommonUtils;
+import com.lixin.codegenerator.util.YamlReader;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,7 +28,7 @@ import java.util.Properties;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DataSourceConfig {
+public class DataSourceConfig implements IConfig {
     private DatabaseType dbType;
     private ITypeConvert typeConvert;
     private String url;
@@ -35,7 +37,7 @@ public class DataSourceConfig {
     private String password;
     private Connection conn = null;
 
-    // 获取数据库类型 mysql oracle
+    // 获取数据库类型 mysql oracle... etc
     public DatabaseType getDbType() {
         if (null == this.dbType) {
             if (this.driverName.contains("mysql")) {
@@ -58,8 +60,8 @@ public class DataSourceConfig {
         try {
             // 元数据操作
             DatabaseMetaData db = conn.getMetaData();
-            // 获取所有表明
-            rs = db.getTables(null, null, null, new String[]{"TABLE"});
+            // 获取所有表名
+            rs = db.getTables(getDBName(url), null, null, new String[]{"TABLE"});
             while (rs.next()) {
                 tableNames.add(rs.getString(3));
             }
@@ -97,7 +99,7 @@ public class DataSourceConfig {
             properties.setProperty("user", username);
             properties.setProperty("password", this.password );
             properties.setProperty("remarks", "true");
-            properties.setProperty("useInformationSchema", "true");//mysql设置可以获取tables remarks信息
+            properties.setProperty("useInformationSchema", "true");//mysql设置可以获取tables remarks信息 -> remarks信息：注释信息
             conn = DriverManager.getConnection(this.url, properties);
         } catch (Exception e) {
             e.printStackTrace();
@@ -191,5 +193,14 @@ public class DataSourceConfig {
             e.printStackTrace();
         }
         return tbColumns;
+    }
+
+    private String getDBName(String url) {
+        return url.contains("?") ? resolve(url.substring(0, url.indexOf("?"))) : resolve(url);
+    }
+
+    private String resolve(String url) {
+        String converted = new StringBuilder(url).reverse().toString();
+        return new StringBuilder(converted.substring(0, converted.indexOf("/"))).reverse().toString();
     }
 }

@@ -13,6 +13,8 @@ public class MySQLTypeConvertor implements ITypeConvert {
     public MySQLTypeConvertor() {
     }
 
+
+    @Override
     public DatabaseColumnType processTypeConvert(String fieldType) {
         String type = fieldType.toLowerCase();
         if (!type.contains("char") && !type.contains("text")) {

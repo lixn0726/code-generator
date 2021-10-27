@@ -1,0 +1,12 @@
+Datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://106.52.106.211:3306/mall?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+  username: root
+  password: root
+  prefix: t_
+
+Global:
+  author: lixn
+  package: com.lixin.codegenerator.test
+  type: controller, model, mapper, service
+  # template-path: xxx 考虑到自由度，让使用者可以使用自己的模版来创建，不写则按照默认的模版创建

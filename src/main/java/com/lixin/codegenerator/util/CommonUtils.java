@@ -14,6 +14,19 @@ import java.util.TimeZone;
  **/
 public class CommonUtils {
     /**
+     * 字符串首字母变为小写
+     */
+    public static String lowerFirstChar(String str) {
+//        if (Character.isLowerCase(str.charAt(0))) {
+//            return str;
+//        } else {
+//            return Character.toLowerCase(str.charAt(0)) + str.substring(1);
+//        }
+        // ------ simplify
+        return Character.isLowerCase(str.charAt(0)) ? str : Character.toLowerCase(str.charAt(0)) + str.substring(1);
+    }
+
+    /**
      *  将字符串去下划线，改为驼峰式命名
      */
     public static String getNoUnderlineStr(String strKey) {
