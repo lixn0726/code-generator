@@ -1,8 +1,8 @@
-package com.lixin.codegenerator.execute;
+package com.lixin.codegenerator.deprecated.execute;
 
-import com.lixin.codegenerator.config.DataSourceConfig;
-import com.lixin.codegenerator.config.GlobalConfig;
-import com.lixin.codegenerator.pojo.TableInfo;
+import com.lixin.codegenerator.deprecated.DataSourceConfig;
+import com.lixin.codegenerator.deprecated.GlobalConfig;
+import com.lixin.codegenerator.dbmessage.TableInfo;
 
 import java.util.List;
 

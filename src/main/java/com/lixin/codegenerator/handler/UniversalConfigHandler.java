@@ -1,7 +1,7 @@
 package com.lixin.codegenerator.handler;
 
 import com.lixin.codegenerator.common.Constant;
-import com.lixin.codegenerator.config.entity.UniversalConfig;
+import com.lixin.codegenerator.config.UniversalConfig;
 
 import java.util.Map;
 
@@ -19,7 +19,7 @@ public class UniversalConfigHandler extends IHandler<Map<String, Object>>{
     }
 
     @Override
-    public void initConfig(Map<String, Object> args) {
+    public UniversalConfig init(Map<String, Object> args) {
         String outputDir = (String) args.get(Constant.OUTPUT_DIR);
         String packageName = (String) args.get(Constant.PACKAGE);
         config.setAuthor(args.get(Constant.AUTHOR) == null ? System.getProperty("user.name") : (String) args.get(Constant.AUTHOR));
@@ -30,8 +30,13 @@ public class UniversalConfigHandler extends IHandler<Map<String, Object>>{
         config.setProjectName((String) args.get(Constant.PROJECT_NAME));
         config.setPackageName((String) args.get(Constant.PACKAGE));
         String codes = (String) args.get(Constant.CODES);
-        String[] types = codes.trim().split(",");
+        String[] temp = codes.trim().split(",");
+        String[] types = new String[temp.length];
+        for (int i = 0; i < temp.length; i++) {
+            types[i] = temp[i].trim();
+        }
         config.setParams(types);
+        return config;
     }
 
     private String getDefaultOutputPath(String packageName) {

@@ -1,4 +1,4 @@
-package com.lixin.codegenerator.config.entity;
+package com.lixin.codegenerator.config;
 
 /**
  * Description:

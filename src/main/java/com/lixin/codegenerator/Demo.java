@@ -1,14 +1,6 @@
 package com.lixin.codegenerator;
 
-import com.lixin.codegenerator.common.Constant;
-import com.lixin.codegenerator.execute.GeneratorManager;
-import org.apache.tomcat.util.bcel.Const;
-
-import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.util.Properties;
+import com.lixin.codegenerator.facade.GeneratorManager;
 
 /**
  * @author lixn
@@ -19,10 +11,9 @@ import java.util.Properties;
 public class Demo {
     public static void main(String[] args) throws Exception{
 
-//        GeneratorManager manager = GeneratorManager.getInstance();
-//        manager.init();
-//        manager.loadDBMessages();
-//        manager.show();
+        GeneratorManager manager = GeneratorManager.getInstance();
+        manager.process();
+
 
 //        String tableName = "t_user_info";
 //        System.out.println(tableName.length());
@@ -50,7 +41,7 @@ public class Demo {
 //        GeneratorFacade facadeInstance = GeneratorFacade.getInstance();
 //        List<Map<String, Object>> conf =  facadeInstance.load();
 //        DatabaseHandler databaseHandler = new DatabaseHandler();
-//        databaseHandler.initConfig(conf.get(0));
+//        databaseHandler.init(conf.get(0));
 
 //
 //        DataSourceConfig config = new DataSourceConfig();

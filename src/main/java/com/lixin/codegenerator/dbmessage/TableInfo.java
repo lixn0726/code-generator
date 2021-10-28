@@ -1,8 +1,4 @@
-package com.lixin.codegenerator.pojo;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+package com.lixin.codegenerator.dbmessage;
 
 import java.util.List;
 

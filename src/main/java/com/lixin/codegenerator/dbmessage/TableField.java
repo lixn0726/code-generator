@@ -1,9 +1,6 @@
-package com.lixin.codegenerator.pojo;
+package com.lixin.codegenerator.dbmessage;
 
 import com.lixin.codegenerator.enums.DatabaseColumnType;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  *

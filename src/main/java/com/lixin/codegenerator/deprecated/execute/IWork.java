@@ -1,4 +1,4 @@
-package com.lixin.codegenerator.execute;
+package com.lixin.codegenerator.deprecated.execute;
 
 /**
  * Description:

@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
@@ -13,17 +14,9 @@ import java.util.TimeZone;
  * @create 2021/8/20 9:49 上午
  **/
 public class CommonUtils {
-    /**
-     * 字符串首字母变为小写
-     */
-    public static String lowerFirstChar(String str) {
-//        if (Character.isLowerCase(str.charAt(0))) {
-//            return str;
-//        } else {
-//            return Character.toLowerCase(str.charAt(0)) + str.substring(1);
-//        }
-        // ------ simplify
-        return Character.isLowerCase(str.charAt(0)) ? str : Character.toLowerCase(str.charAt(0)) + str.substring(1);
+    public static String upperFirst(String code) {
+        code = code.toLowerCase(Locale.ROOT);
+        return code.substring(0, 1).toUpperCase(Locale.ROOT) + code.substring(1);
     }
 
     /**

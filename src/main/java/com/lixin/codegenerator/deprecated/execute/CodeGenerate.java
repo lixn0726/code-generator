@@ -1,12 +1,11 @@
-package com.lixin.codegenerator.execute;
+package com.lixin.codegenerator.deprecated.execute;
 
-import com.lixin.codegenerator.config.DataSourceConfig;
-import com.lixin.codegenerator.config.GlobalConfig;
-import com.lixin.codegenerator.pojo.TableField;
-import com.lixin.codegenerator.pojo.TableInfo;
+import com.lixin.codegenerator.deprecated.DataSourceConfig;
+import com.lixin.codegenerator.deprecated.GlobalConfig;
+import com.lixin.codegenerator.dbmessage.TableField;
+import com.lixin.codegenerator.dbmessage.TableInfo;
 import com.lixin.codegenerator.util.CommonUtils;
 import org.apache.commons.lang3.StringUtils;
-import sun.misc.GC;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -19,6 +18,7 @@ import java.util.Map;
  * @Description TODO
  * @create 2021/8/20 10:03 上午
  **/
+@Deprecated
 public class CodeGenerate implements ICallBack{
     private List<TableInfo> tableInfoList;
     private TableInfo tableInfo;
@@ -73,7 +73,7 @@ public class CodeGenerate implements ICallBack{
      * @return
      */
     public boolean generateToFile() {
-        initConfig();
+        init();
         for(TableInfo tableInfo : tableInfoList){
             this.tableInfo = tableInfo;//当前需要生成的表
             try{
@@ -101,7 +101,7 @@ public class CodeGenerate implements ICallBack{
     /**
      * 初始化获取参数
      */
-    private void initConfig(){
+    private void init(){
         if(dataSourceConfig == null){
             throw new RuntimeException("dataSourceConfig is null");
         }

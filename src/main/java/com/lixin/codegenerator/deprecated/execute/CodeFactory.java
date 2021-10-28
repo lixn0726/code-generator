@@ -1,6 +1,6 @@
-package com.lixin.codegenerator.execute;
+package com.lixin.codegenerator.deprecated.execute;
 
-import com.lixin.codegenerator.config.GlobalConfig;
+import com.lixin.codegenerator.deprecated.GlobalConfig;
 import com.lixin.codegenerator.enums.CodeType;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -23,6 +23,7 @@ import java.util.Map;
  **/
 @Getter
 @Setter
+@Deprecated
 public class CodeFactory {
     private ICallBack callBack;
     private GlobalConfig globalConfig;

@@ -1,6 +1,5 @@
-package com.lixin.codegenerator.config.convert;
+package com.lixin.codegenerator.converter;
 
-import com.lixin.codegenerator.config.ITypeConvert;
 import com.lixin.codegenerator.enums.DatabaseColumnType;
 
 /**

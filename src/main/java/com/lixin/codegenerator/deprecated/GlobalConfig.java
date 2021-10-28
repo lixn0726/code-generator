@@ -1,9 +1,4 @@
-package com.lixin.codegenerator.config;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+package com.lixin.codegenerator.deprecated;
 
 import java.util.List;
 
@@ -13,6 +8,7 @@ import java.util.List;
  * @Description TODO
  * @create 2021/8/20 9:11 上午
  **/
+@Deprecated
 public class GlobalConfig {
     private String encoding = "UTF-8";
     private String templatePath = "";// 模版路径

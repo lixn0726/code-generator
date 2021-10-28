@@ -1,13 +1,13 @@
 package com.lixin.codegenerator.handler;
 
 import com.lixin.codegenerator.common.Constant;
-import com.lixin.codegenerator.config.ITypeConvert;
-import com.lixin.codegenerator.config.convert.MySQLTypeConvertor;
-import com.lixin.codegenerator.config.convert.OracleTypeConvertor;
-import com.lixin.codegenerator.config.entity.DatabaseConfig;
+import com.lixin.codegenerator.converter.ITypeConvert;
+import com.lixin.codegenerator.converter.MySQLTypeConvertor;
+import com.lixin.codegenerator.converter.OracleTypeConvertor;
+import com.lixin.codegenerator.config.DatabaseConfig;
 import com.lixin.codegenerator.enums.DatabaseType;
-import com.lixin.codegenerator.pojo.TableField;
-import com.lixin.codegenerator.pojo.TableInfo;
+import com.lixin.codegenerator.dbmessage.TableField;
+import com.lixin.codegenerator.dbmessage.TableInfo;
 import com.lixin.codegenerator.util.CommonUtils;
 
 import java.sql.*;
@@ -34,7 +34,7 @@ public class DatabaseConfigHandler extends IHandler<Map<String, Object>>{
      * 配置信息初始化
      */
     @Override
-    public void initConfig(Map<String, Object> args) {
+    public DatabaseConfig init(Map<String, Object> args) {
         config.setDriverName((args.get(Constant.DRIVER)) == null ? Constant.JDBC : (String) args.get(Constant.DRIVER));
         config.setUrl((String) args.get(Constant.URL));
         config.setUsername((String) args.get(Constant.USERNAME));
@@ -50,6 +50,7 @@ public class DatabaseConfigHandler extends IHandler<Map<String, Object>>{
         String prefix = (String) args.get(Constant.PREFIX);
         String[] prefixes = prefix.trim().split(",");
         config.setPrefix(prefixes);
+        return config;
     }
 
     /**

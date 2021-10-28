@@ -1,4 +1,4 @@
-package com.lixin.codegenerator.config.entity;
+package com.lixin.codegenerator.config;
 
 /**
  * Description: 全局通用配置类
@@ -6,12 +6,14 @@ package com.lixin.codegenerator.config.entity;
  *
  * @author lixn
  */
-public class UniversalConfig {
+public class UniversalConfig implements IConfig{
     private String author;
-    private String outputDir; // 文件输出路径
+    private String outputDir; // 文件输出路径，考虑修改为 String[] 数组类型，适配多模块的情况
     private String[] params; // 要生成的代码种类
     private String projectName; // 项目名
     private String packageName; // 包名
+//    private String templatePath; // 模版文件存放路径 暂时用不上
+//    private String encoding; // 编码格式，先固定
 
     // ------ inner builder
 

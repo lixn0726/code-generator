@@ -1,13 +1,13 @@
-package com.lixin.codegenerator.config;
+package com.lixin.codegenerator.deprecated;
 
-import com.lixin.codegenerator.config.convert.MySQLTypeConvertor;
-import com.lixin.codegenerator.config.convert.OracleTypeConvertor;
-import com.lixin.codegenerator.config.entity.IConfig;
+import com.lixin.codegenerator.converter.ITypeConvert;
+import com.lixin.codegenerator.converter.MySQLTypeConvertor;
+import com.lixin.codegenerator.converter.OracleTypeConvertor;
+import com.lixin.codegenerator.config.IConfig;
 import com.lixin.codegenerator.enums.DatabaseType;
-import com.lixin.codegenerator.pojo.TableField;
-import com.lixin.codegenerator.pojo.TableInfo;
+import com.lixin.codegenerator.dbmessage.TableField;
+import com.lixin.codegenerator.dbmessage.TableInfo;
 import com.lixin.codegenerator.util.CommonUtils;
-import com.lixin.codegenerator.util.YamlReader;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +28,7 @@ import java.util.Properties;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Deprecated
 public class DataSourceConfig implements IConfig {
     private DatabaseType dbType;
     private ITypeConvert typeConvert;

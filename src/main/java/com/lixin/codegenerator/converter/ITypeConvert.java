@@ -1,4 +1,4 @@
-package com.lixin.codegenerator.config;
+package com.lixin.codegenerator.converter;
 
 import com.lixin.codegenerator.enums.DatabaseColumnType;
 

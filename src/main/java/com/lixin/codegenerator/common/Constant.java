@@ -33,4 +33,6 @@ public interface Constant {
     String PACKAGE = "package";
     String CODES = "type";
     String PROJECT_NAME = "project-name";
+
+    String UTF8 = "UTF-8";
 }
