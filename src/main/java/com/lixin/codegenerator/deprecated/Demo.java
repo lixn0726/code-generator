@@ -1,4 +1,4 @@
-package com.lixin.codegenerator;
+package com.lixin.codegenerator.deprecated;
 
 import com.lixin.codegenerator.facade.GeneratorManager;
 
